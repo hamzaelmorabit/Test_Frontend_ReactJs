@@ -2,12 +2,16 @@ import React, { Component } from "react";
 
 class ProductItem extends Component {
   render() {
-    const { category, features } = this.props.product;
+    const { modelId, description, category, features } = this.props.product;
     return (
       <div>
-        <h3>{features}</h3>
-
-        <h3>{category}</h3>
+        <p style={{ fontWeight: "bold" }}>{description}</p>
+        <u>
+          {features.map((f) => (
+            <li>{f}</li>
+          ))}
+        </u>
+        modelId : {modelId}
       </div>
     );
   }
